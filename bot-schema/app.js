@@ -122,9 +122,6 @@
   const schemaBody = document.getElementById("schema-body");
   const jsBody = document.getElementById("js-body");
   const toast = document.getElementById("toast");
-  const platformLabel = document.getElementById("platform-label");
-  const conversationLabel = document.getElementById("conversation-label");
-  const refreshContextButton = document.getElementById("refresh-context");
   let toastTimer;
 
   function escapeHtml(value) {
@@ -166,10 +163,7 @@
   }
 
   function refreshContext() {
-    const ctx = getMixinContext();
-    platformLabel.textContent = ctx.platform || "Browser";
-    conversationLabel.textContent = ctx.conversation_id || "未检测到";
-    return ctx;
+    return getMixinContext();
   }
 
   function renderShare() {
@@ -359,7 +353,6 @@
     bindTabs();
     bindActions();
     installCallbacks();
-    refreshContextButton.addEventListener("click", refreshContext);
     refreshContext();
     const code = getUrlParameter("code");
     if (code) {
