@@ -103,7 +103,7 @@
     ["用户弹窗", "mixin://users/:userid", "mixin://users/b26b9a74-40dd-4e8d-8e41-94d9fce0b5c0"],
     ["机器人首页", "mixin://apps/:appid?action=open", "mixin://apps/9ecca96f-3473-4f2a-8ad9-0ebb1a3b1fa7?action=open"],
     ["打开其他机器人主页", "mixin://apps/:appid?action=open", "mixin://apps/1ab1f241-b809-4790-bcfd-a1779bb1d313?action=open"],
-    ["新窗口打开链接", "https://hot-bots.mixinbots.com/tools", "https://hot-bots.mixinbots.com/tools"],
+    ["新窗口打开链接", "https://hot-bots.mixinbots.com/tools", "https://hot-bots.mixinbots.com/tools", "_blank"],
     ["添加地址", "mixin://apps/:appid?action=open", "mixin://apps/1ab1f241-b809-4790-bcfd-a1779bb1d313?action=open"]
   ];
 
@@ -179,7 +179,8 @@
 
   function renderSchema() {
     schemaBody.innerHTML = schemaItems.map(function (item) {
-      return "<tr><td><span class=\"title\">" + escapeHtml(item[0]) + "</span><span class=\"description\">" + escapeHtml(item[1]) + "</span></td><td><div class=\"action-group\"><a class=\"action-link primary\" href=\"" + item[2] + "\">唤起</a></div></td></tr>";
+      const target = item[3] ? ' target="' + item[3] + '"' : "";
+      return "<tr><td><span class=\"title\">" + escapeHtml(item[0]) + "</span><span class=\"description\">" + escapeHtml(item[1]) + "</span></td><td><div class=\"action-group\"><a class=\"action-link primary\" href=\"" + item[2] + "\"" + target + ">唤起</a></div></td></tr>";
     }).join("") + "<tr><td><span class=\"title\">机器人授权</span><span class=\"description\">[PROFILE:READ + ASSETS:READ + CONTACTS:READ + ...]</span></td><td><div class=\"action-group\"><button class=\"action-button primary\" type=\"button\" data-kind=\"authorization\">唤起</button></div></td></tr>";
   }
 
@@ -260,6 +261,12 @@
       }
     }
     url += "&data=" + payload;
+    if (typeof window.open === "function") {
+      const openedWindow = window.open(url);
+      if (openedWindow !== null) {
+        return;
+      }
+    }
     window.location.href = url;
   }
 
@@ -329,7 +336,7 @@
       } else if (kind === "js") {
         handleJsAction(button.getAttribute("data-action"));
       } else if (kind === "authorization") {
-        window.location.href = "https://mixin.one/oauth/authorize?client_id=14ba6299-5daf-4d07-9e2c-f84d413d2482&scope=PROFILE:READ+ASSETS:READ+PHONE:READ+CONTACTS:READ+MESSAGES:REPRESENT+SNAPSHOTS:READ+CIRCLES:READ+CIRCLES:WRITE+COLLECTIBLES:READ+STICKER:READ&response_type=code&return_to=";
+        window.location.replace("https://mixin.one/oauth/authorize?client_id=14ba6299-5daf-4d07-9e2c-f84d413d2482&scope=PROFILE:READ+ASSETS:READ+PHONE:READ+CONTACTS:READ+MESSAGES:REPRESENT+SNAPSHOTS:READ+CIRCLES:READ+CIRCLES:WRITE+COLLECTIBLES:READ+STICKER:READ&response_type=code&return_to=");
       }
     });
   }
