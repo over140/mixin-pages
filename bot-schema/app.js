@@ -104,7 +104,7 @@
     ["机器人首页", "mixin://apps/:appid?action=open", "mixin://apps/9ecca96f-3473-4f2a-8ad9-0ebb1a3b1fa7?action=open"],
     ["打开其他机器人主页", "mixin://apps/:appid?action=open", "mixin://apps/1ab1f241-b809-4790-bcfd-a1779bb1d313?action=open"],
     ["新窗口打开链接", "https://hot-bots.mixinbots.com/tools", "https://hot-bots.mixinbots.com/tools", "_blank"],
-    ["测试 OneLink 跳转", "https://mixin.onelink.me/dHGb/ncck7h19", "https://mixin.onelink.me/dHGb/ncck7h19"],
+    ["测试 OneLink 跳转", "https://mixin.onelink.me/dHGb/iqwa3f34", "https://mixin.onelink.me/dHGb/iqwa3f34"],
     ["添加地址", "mixin://apps/:appid?action=open", "mixin://apps/1ab1f241-b809-4790-bcfd-a1779bb1d313?action=open"]
   ];
 
