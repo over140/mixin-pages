@@ -180,6 +180,11 @@ td:first-child {
     padding-top: 0;
   }
 
+  /* 窄屏下两个 td 堆叠成一行，分割线只留在每项顶部 */
+  tr + tr td:last-child {
+    border-top: 0;
+  }
+
   .action-group {
     justify-content: flex-start;
   }
