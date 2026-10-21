@@ -93,6 +93,7 @@
   const schemaItems = [
     ["【新】主网转账 MIX 单人", "https://mixin.one/pay/MIX{}?amount=&asset=&memo=", "https://mixin.one/pay/MIX3QEgBMATh7aD1YL3x3T5tzt9FSTMZru?amount=0.1&asset=965e5c6e-434c-3fa9-b780-c50f43cd955c&memo=7ye3da"],
     ["【新】主网转账 MIX 多签", "https://mixin.one/pay/MIX{}?amount=&asset=&memo=", "https://mixin.one/pay/MIXDLSoouhdcvedoiSzNHNRR4FNqVNwwgHUXkFoApTsz35fBHSNGyZEqGCzWuwDYrrWDwCXiaNcPec4C5cW8tCiE7BUHvs6A9YZ4B6FiFAEYY5Nd1etLA7aE7?amount=0.1&asset=965e5c6e-434c-3fa9-b780-c50f43cd955c&memo=abcde"],
+    ["测试单日转账余额不足", "https://mixin.one/pay/MIX{}?amount=&asset=&memo=", "https://mixin.one/pay/MIX3QEgBMATh7aD1YL3x3T5tzt9FSTMZru?amount=10&asset=c6d0c728-2624-429b-8e0d-d9d19b6592fa&memo=7ye3da"],
     ["【新】主网转账 MIX 多签不带 Amount", "https://mixin.one/pay/MIX{}?amount=&asset=&memo=", "https://mixin.one/pay/MIXDLSoouhdcvedoiSzNHNRR4FNqVNwwgHUXkFoApTsz35fBHSNGyZEqGCzWuwDYrrWDwCXiaNcPec4C5cW8tCiE7BUHvs6A9YZ4B6FiFAEYY5Nd1etLA7aE7"],
     ["【新】主网转账 XIN 开头", "https://mixin.one/pay/XIN{}", "https://mixin.one/pay/XINSFtShWmATt1e5E96kCcKX7BmPaPP4mTEgh9fjGrtBgFqTYghw55Tc4G9FsbX11fJYup9MZQiPXZ1hyv8KN8VoBM2ERotx"],
     ["【新】扫码转账", "https://mixin.one/pay/{userid}", "https://mixin.one/pay/d3bee23a-81d4-462e-902a-22dae9ef89ff"],
